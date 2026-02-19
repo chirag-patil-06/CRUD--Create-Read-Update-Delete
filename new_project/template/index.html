@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail Form</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f43c;
+            margin: 0%;
+            padding: 0;
+            box-shadow: #007bff;
+        }
+        .container {
+            max-width: 150px;
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            background-image: url(https://th.bing.com/th/id/OIP.nkPEb1MF99uNc5ZzQp4VbgHaEK?w=294&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+            box-shadow: 0 0 10px rgb(201, 42, 42);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            flex-direction: initial;
+            
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            
+            resize: vertical;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form class="registration-form" method="POST">
+
+    {% csrf_token %}
+
+    <h2>Employee Detail Form</h2>
+    
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="joiningDate">Joining Date</label>
+            <input type="date" id="joiningDate" name="joining">
+        </div>
+
+        <div class="form-group">
+            <label for="itJobs">Select Job Role:</label>
+            <select id="itJobs" name="job">
+                <option value="softwareDeveloper">Software Developer</option>
+                <option value="systemAdministrator">System Administrator</option>
+                <option value="networkEngineer">Network Engineer</option>
+                <option value="dataAnalyst">Data Analyst</option>
+                <option value="cyberSecuritySpecialist">Cyber Security Specialist</option>
+                <option value="cloudEngineer">Cloud Engineer</option>
+                <option value="itSupport">IT Support</option>
+            </select>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>

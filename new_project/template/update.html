@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form class="registration-form" method="POST">
+
+    {% csrf_token %}
+
+    <h2>Employee Detail Form</h2>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" value="{{employee.name}}" name="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="{{employee.name}}"name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" value="{{employee.name}}" name="phone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="joiningDate">Joining Date</label>
+            <input type="date" id="joiningDate" name="joining" value="{{employee.name}}">
+        </div>
+
+        <div class="form-group">
+            <label for="itJobs">Select Job Role:</label>
+            <select id="itJobs" name="job">
+                <option value="softwareDeveloper">Software Developer</option>
+                <option value="systemAdministrator">System Administrator</option>
+                <option value="networkEngineer">Network Engineer</option>
+                <option value="dataAnalyst">Data Analyst</option>
+                <option value="cyberSecuritySpecialist">Cyber Security Specialist</option>
+                <option value="cloudEngineer">Cloud Engineer</option>
+                <option value="itSupport">IT Support</option>
+            </select>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+</body>
+</html>
